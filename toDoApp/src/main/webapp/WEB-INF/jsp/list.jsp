@@ -13,14 +13,15 @@
  %>
  <% for(TodoApp todoApp : todoList){  %>
        <h4><%=todoApp.getTodo()%></h4>
-       <h5><%=todoApp.getTimeLimit()%></h5>
+       <label>期限 <h5><%=todoApp.getTimeLimit()%></h5>
        <a href="Update?<%=Parameters.Todo_Id %>=<%= todoApp.getId() %>">todoを更新する</a>
+       <a href="Delete?<%=Parameters.Todo_Id %>=<%= todoApp.getId() %>">todoを削除する</a>
  <% } %>
 
 
 <form action="Main" method="post">
     <label>Todo: </label><input type="text" name="<%=Parameters.Todo%>"><br>
-    <label>Limit: </label><input type="date" name="<%=Parameters.Time_Limit%>"> <br>
+    <label>期限: </label><input type="date" name="<%=Parameters.Time_Limit%>"> <br>
     <input type="submit" value="Todoを登録する">
 </form>
 
