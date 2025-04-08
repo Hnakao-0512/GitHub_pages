@@ -149,4 +149,28 @@ public class TodoDAO {
 	   }
 	    return true;
 	}
+public boolean daleteTodo(int id) { 
+		
+		//SQL文(SELECT)を作成
+			String sql = "DELETE " +
+							"FROM " +
+							"todo " +						
+						  "WHERE id = ?" ;
+			try(Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+				
+				
+				pStmt.setInt(1, id);
+					
+			int result = pStmt.executeUpdate();
+			if (result != 1) {
+				return false; //登録失敗
+		}
+			} catch (SQLException e) {
+		e.printStackTrace();   //接続やSQL処理失敗時の処理
+		return false;
+	   }
+	    return true;
+	}
 }
