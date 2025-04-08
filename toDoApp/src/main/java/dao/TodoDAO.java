@@ -20,7 +20,7 @@ public class TodoDAO {
 	// データベースから表取得
 	public List<TodoApp> findAll() { 
 		
-		//SQL文(SELECT)
+		//SQL文(SELECT)作成
 		String sql = "SELECT " +
 						"id, " +
 						"todo, " +
