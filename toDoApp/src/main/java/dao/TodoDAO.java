@@ -25,7 +25,7 @@ public class TodoDAO {
 						"id, " +
 						"todo, " +
 						"timelimit " +
-					"FROM todo" ;
+					"FROM todo ORDER BY timelimit" ;
 		
 		
 		//ArrayListを作成
