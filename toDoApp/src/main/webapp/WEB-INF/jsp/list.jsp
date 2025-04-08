@@ -13,7 +13,7 @@
  %>
  <% for(TodoApp todoApp : todoList){  %>
        <h4><%=todoApp.getTodo()%></h4>
-       <label>期限 <h5><%=todoApp.getTimeLimit()%></h5>
+       <label>期限 <%=todoApp.getTimeLimit()%><br>
        <a href="Update?<%=Parameters.Todo_Id %>=<%= todoApp.getId() %>">todoを更新する</a>
        <a href="Delete?<%=Parameters.Todo_Id %>=<%= todoApp.getId() %>">todoを削除する</a>
  <% } %>
